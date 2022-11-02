@@ -33,11 +33,15 @@ let winIcecream = (message) => {
     });
 };
 
-cleanRoom().then((resolve) => {
+/*cleanRoom().then((resolve) => {
     return removeGarbage(resolve);
 }). then((resolve) => {
     return winIcecream(resolve);
 }). then((resolve) => {
+    console.log(`finished ${resolve}`);
+})*/
+
+Promise.all([cleanRoom(),removeGarbage(),winIcecream()]).then((resolve) => {
     console.log(`finished ${resolve}`);
 })
 
