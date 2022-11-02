@@ -1,24 +1,15 @@
-// object literals
+let promiseToClean =new Promise((resolve,reject) =>{
+   let isClean = true;
 
-let user = {
-    name: 'crystal',
-    age: 30,
-    email: 'crystal@thenetninja.co.uk',
-    location: 'berlin',
-    blogs: ['why mac & cheese rules', '10 things to make with marmite'],
-    login: function(){
-      console.log('the user logged in');
-    },
-    logout: function(){
-      console.log('the user logged out');
-    },
-    logBlogs: function(){
-      // access the blogs here
-    }
-  };
-  
-  user.login();
-  user.logout();
-  
-  const name = 'shaun';
-  name.toUpperCase();
+   if (isClean){
+    resolve('clean');
+   } else{
+    reject('not clean');
+   }
+});
+
+promiseToClean.then((resolve) =>{
+    console.log(`the room is ${resolve}`)
+}). catch ((reject) => {
+    console.log(`in the room ${reject}`)
+})
