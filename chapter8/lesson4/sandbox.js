@@ -15,7 +15,7 @@ const getTodos = async () => {
 };
 getTodos().then((fromResolve) => {
   console.log(fromResolve);
-});*/
+});
 
 function makeRequest(location){
   return new Promise((resolve,reject) => {
@@ -36,6 +36,33 @@ function processRequest(response){
 }
 
 async function doWork(){
+  const response = await makeRequest('Google');
+  console.log('Response Received');
+  const processedResponse = await processRequest(response);
+  console.log(processedResponse);
+}
+
+doWork();*/
+
+async function doWork(){
+  function makeRequest(location){
+    return new Promise((resolve,reject) => {
+        console.log(`Making Request to ${location}`)
+        if(location === 'Google'){
+            resolve('Google says hi')
+        } else {
+            reject('We can only talk to Google')
+        }
+    })
+}
+
+function processRequest(response){
+  return new Promise((resolve,reject) =>{
+      console.log('processing response')
+      resolve(`Extra Information + ${response}`)
+  })
+}
+
   const response = await makeRequest('Google');
   console.log('Response Received');
   const processedResponse = await processRequest(response);
