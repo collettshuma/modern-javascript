@@ -44,7 +44,7 @@ async function doWork(){
 
 doWork();*/
 
-async function doWork(){
+/*async function doWork(){
   function makeRequest(location){
     return new Promise((resolve,reject) => {
         console.log(`Making Request to ${location}`)
@@ -69,4 +69,51 @@ function processRequest(response){
   console.log(processedResponse);
 }
 
-doWork();
+doWork();*/
+
+console.log('one');
+console.log('two');
+console.log('three');
+
+const myTasks = async () => {
+  let promiseToClean =new Promise((resolve,reject) =>{
+    let isClean = true;
+  
+    if (isClean){
+     resolve('clean');
+    } else{
+     reject('not clean');
+    }
+  });
+  
+  let promiseToStudy = new Promise((resolve,reject) => {
+    let didStudy = true;
+  
+    if(didStudy){
+        resolve(`i studied coding for 2 hours`);
+    } else{
+        reject(`i was occupied so didn't find time to study`)
+    }
+  });
+  
+  const winIcecream = new Promise((resolve,reject) => {
+    const completedTasks = true;
+    if(completedTasks){
+      resolve('i like my icecrean reward')
+    }else {
+      reject('did not complete my tasks so no icecream reward')
+    }
+  })
+  
+  const response = await promiseToClean;
+  console.log(response);
+  const response2 = await promiseToStudy;
+  console.log(response2);
+  const response3 = await winIcecream;
+  console.log(response3);
+}
+
+myTasks();
+console.log('four');
+console.log('five');
+
