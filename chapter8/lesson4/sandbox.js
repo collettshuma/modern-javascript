@@ -44,7 +44,7 @@ async function doWork(){
 
 doWork();*/
 
-/*async function doWork(){
+async function doWork(){
   function makeRequest(location){
     return new Promise((resolve,reject) => {
         console.log(`Making Request to ${location}`)
@@ -65,11 +65,12 @@ function processRequest(response){
 
   const response = await makeRequest('Google');
   console.log('Response Received');
+  console.log(response)
   const processedResponse = await processRequest(response);
   console.log(processedResponse);
 }
 
-doWork();*/
+doWork();
 
 console.log('one');
 console.log('two');
@@ -104,7 +105,7 @@ const myTasks = async () => {
       reject('did not complete my tasks so no icecream reward')
     }
   })
-  
+
   const response = await promiseToClean;
   console.log(response);
   const response2 = await promiseToStudy;
@@ -113,7 +114,9 @@ const myTasks = async () => {
   console.log(response3);
 }
 
-myTasks();
+myTasks().then(() => {
+  console.log('the whole process is finished')
+});
 console.log('four');
 console.log('five');
 
