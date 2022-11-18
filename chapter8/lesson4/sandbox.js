@@ -5,7 +5,14 @@ dealing with promise chaining */
 
 
 const getTodos = async () => {
-
+   return new Promise((resolve,reject) =>{
+    let isClean = true;
+    if(isClean){
+      resolve('I cleaned my room thoroughly');
+    };
+    });
+    const aaa = await getTodos();
 };
-const test = getTodos();
-console.log(test);
+getTodos().then((fromResolve) => {
+  console.log(fromResolve);
+});
