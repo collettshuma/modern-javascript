@@ -3,7 +3,7 @@
 then chain all our promises uses the await keyword.Thus for its a smarter way of 
 dealing with promise chaining */
 
-
+/*
 const getTodos = async () => {
    return new Promise((resolve,reject) =>{
     let isClean = true;
@@ -15,4 +15,31 @@ const getTodos = async () => {
 };
 getTodos().then((fromResolve) => {
   console.log(fromResolve);
-});
+});*/
+
+function makeRequest(location){
+  return new Promise((resolve,reject) => {
+      console.log(`Making Request to ${location}`)
+      if(location === 'Google'){
+          resolve('Google says hi')
+      } else {
+          reject('We can only talk to Google')
+      }
+  })
+}
+
+function processRequest(response){
+  return new Promise((resolve,reject) =>{
+      console.log('processing response')
+      resolve(`Extra Information + ${response}`)
+  })
+}
+
+async function doWork(){
+  const response = await makeRequest('Google');
+  console.log('Response Received');
+  const processedResponse = await processRequest(response);
+  console.log(processedResponse);
+}
+
+doWork();
