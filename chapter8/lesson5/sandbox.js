@@ -1,4 +1,4 @@
-let user = {
+/*let user = {
     name: 'collet',
     address: '8 Marlothi street',
     email: 'collettshuma@gmail.com',
@@ -21,10 +21,104 @@ let user = {
 //console.log(user);
 //console.log(user.name);
 //console.log(user.blogs);
-user.logBlogs();
+//user.logBlogs(); */
 
 
 //use (this) when you want to use the property in a method of the same object
+
+
+/*const promiseToClean = () => {
+    return new Promise((resolve,reject) => {
+        const isClean = true;
+
+        if(isClean){
+            resolve(`my room is clean`);
+        } else{
+            reject(`the room is still dirty`);
+        }
+    })
+}
+
+const promiseToEat = () => {
+    return new Promise((resolve,reject) => {
+        const isEating = true;
+
+        if(isEating){
+            resolve(`i ate pap and meat`);
+        } else{
+            reject(`failed to eat because i was tired`);
+        }
+    })
+}
+
+const promiseToStudy = () => {
+    return new Promise((resolve,reject) => {
+        const isStudying = true;
+
+        if(isStudying){
+            resolve(`i studied coding`)
+        } else{
+            reject(`failed to study because i was tired`)
+        }
+    })
+}
+
+promiseToClean().then((fromResolve) => {
+    console.log(`Get answer from : ${fromResolve}`)
+    return promiseToEat();
+}).catch ((fromReject) => {
+    console.log(`Get answer from : ${fromReject}`);
+    return promiseToEat();
+}).then((fromResolve) => {
+    console.log(`Get answer from : ${fromResolve}`);
+    return promiseToStudy();
+}).catch((fromReject) => {
+    console.log(`Get answer fom : ${fromReject}`);
+    return promiseToStudy()
+}).then((fromResolve) => {
+    console.log(`Get answer from : ${fromResolve}`);
+}).catch((fromReject) => {
+    console.log(`Get answer from : ${fromReject}`);
+})*/
+
+const myTodo = async () => {
+    const promiseToClean = () => {
+        return new Promise((resolve,reject) => {
+            const isClean = true;
+
+            if(isClean){
+                resolve(`my room is clean`)
+            } else(
+                reject(`my room is still dirty`)
+            )
+        })
+    }
+    const promiseToEat = () => {
+        return new Promise((resolve,reject) => {
+            const isEating = true;
+
+            if(isEating){
+                resolve(`i ate pap and meat`)
+            }else{
+                reject(`failed to eat because i was tired`)
+            }
+        })
+    }
+
+    const promiseToStudy = () => {
+        return new Promise((resolve,reject) => {
+            const isStudying = true;
+    
+            if(isStudying){
+                resolve(`i studied coding`)
+            } else{
+                reject(`failed to study because i was tired`)
+            }
+        })
+    }
+     const clean = await promiseToClean();
+}
+myTodo();
 
 
 
