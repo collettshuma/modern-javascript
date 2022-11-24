@@ -81,44 +81,7 @@ promiseToClean().then((fromResolve) => {
     console.log(`Get answer from : ${fromReject}`);
 })*/
 
-const myTodo = async () => {
-    const promiseToClean = () => {
-        return new Promise((resolve,reject) => {
-            const isClean = true;
 
-            if(isClean){
-                resolve(`my room is clean`)
-            } else(
-                reject(`my room is still dirty`)
-            )
-        })
-    }
-    const promiseToEat = () => {
-        return new Promise((resolve,reject) => {
-            const isEating = true;
-
-            if(isEating){
-                resolve(`i ate pap and meat`)
-            }else{
-                reject(`failed to eat because i was tired`)
-            }
-        })
-    }
-
-    const promiseToStudy = () => {
-        return new Promise((resolve,reject) => {
-            const isStudying = true;
-    
-            if(isStudying){
-                resolve(`i studied coding`)
-            } else{
-                reject(`failed to study because i was tired`)
-            }
-        })
-    }
-     const clean = await promiseToClean();
-}
-myTodo();
 
 
 
