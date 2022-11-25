@@ -81,7 +81,52 @@ promiseToClean().then((fromResolve) => {
     console.log(`Get answer from : ${fromReject}`);
 })*/
 
+const toDo = async() => {
+    const promiseToVisitLiverpool = () => {
+        return new Promise((resolve,reject) => {
+            const visit = true;
 
+            if(visit){
+                resolve(`Its my first time in Merseyside`)
+            } else {
+                reject(`my visa was declined`)
+            }
+        })
+    }
+
+    const promiseWatchAMatchAtAnfield = () => {
+        return new Promise((resolve,reject) => {
+            watchAMatch = true;
+
+            if(watchAMatch){
+                resolve(`Salah is a baller`)
+            } else {
+                reject('got flue so i stayed indoors the whole day')
+            }
+        })
+    }
+
+    const promiseToTakeTourBus = () => {
+        return new Promise((resolve,reject) => {
+            takeTourBus = false;
+
+            if(takeTourBus){
+                resolve(`visited all tourist site in city`)
+            } else {
+                reject(`i was tired so missed the bus`)
+            }
+        })
+    }
+    
+     const response = await promiseToVisitLiverpool();
+     console.log(response);
+     const response2 = await promiseWatchAMatchAtAnfield();
+     console.log(response2);
+     const response3 = await promiseToTakeTourBus();
+     console.log(response3);
+}
+toDo().then(() => console.log(`my visit was wholesome`)).
+catch(() => console.log(`a lot of unforseen things happened so it was not the best`))
 
 
 
