@@ -18,4 +18,8 @@ for(let [key,value] of map){
     console.log(key, ":", value); 
 }*/
 
-map.forEach((value,key) => console.log(key, ":", value));
+//map.forEach((value,key) => console.log(key, ":", value));
+
+const myMap = new Map([["name","collet"],["surname","tshuma"]]);
+
+console.log(myMap);
