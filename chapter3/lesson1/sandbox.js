@@ -17,8 +17,9 @@ let user = {
     }
   };
   
-  user.login();
-  user.logout();
+  //user.login();
+  //user.logout();
   
-  const name = 'shaun';
-  name.toUpperCase();
+  //const name = 'shaun';
+  //name.toUpperCase();
+  console.log(user);
