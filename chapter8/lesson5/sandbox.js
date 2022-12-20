@@ -26,8 +26,8 @@
 
 //use (this) when you want to use the property in a method of the same object
 
-
-/*const promiseToClean = () => {
+/*
+const promiseToClean = () => {
     return new Promise((resolve,reject) => {
         const isClean = true;
 
@@ -79,7 +79,7 @@ promiseToClean().then((fromResolve) => {
     console.log(`Get answer from : ${fromResolve}`);
 }).catch((fromReject) => {
     console.log(`Get answer from : ${fromReject}`);
-})*/
+})
 
 const toDo = async() => {
     const promiseToVisitLiverpool = () => {
@@ -108,7 +108,7 @@ const toDo = async() => {
 
     const promiseToTakeTourBus = () => {
         return new Promise((resolve,reject) => {
-            takeTourBus = false;
+            takeTourBus = true;
 
             if(takeTourBus){
                 resolve(`visited all tourist site in city`)
@@ -125,10 +125,46 @@ const toDo = async() => {
      const response3 = await promiseToTakeTourBus();
      console.log(response3);
 }
-toDo().then(() => console.log(`my visit was wholesome`)).
-catch(() => console.log(`a lot of unforseen things happened so it was not the best`))
+//toDo().then(() => console.log(`my visit was wholesome`)).
+//catch(() => console.log(`a lot of unforseen things happened so it was not the best`))
 
+toDo()
+*/
 
+const goToWork = () => {
+    return new Promise((resolve,reject) => {
+        const didGoToWork = true;
 
+        if(didGoToWork){
+            resolve(`yes and it was good`);
+        }else {
+            reject(`i couldn't make it because of sickness`);
+        }
+    })
+}
+
+const goToChurch = () => {
+    return new Promise((resolve,reject) => {
+        const didGoToChurch = true;
+
+        if(didGoToChurch){
+            resolve(`the service was a blessing`);
+        } else {
+            reject(`i slept after work`);
+        }
+    })
+}
+
+goToWork().then((fromResolve) => {
+    console.log(`answer : ${fromResolve}`);
+    return goToChurch();
+}).catch((fromReject) => {
+    console.log(`answer : ${fromReject}`);
+    return goToChurch();
+}).then((fromResolve) => {
+    console.log(`answer : ${fromResolve}`);
+}).catch((fromReject) => {
+    console.log(`answer : ${fromReject}`);
+})
 
 
